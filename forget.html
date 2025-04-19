@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Forgot Password</h2>
+
+    <form id="forgotForm" onsubmit="handleReset(event)">
+      <div class="form-group">
+        <label for="email">Enter your registered E-Mail*</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-group captcha">
+        <input type="checkbox" id="notRobot" required />
+        <label for="notRobot">I'm not a robot</label>
+      </div>
+
+      <button type="submit" class="btn">Reset Password</button>
+    </form>
+    
+    <script>
+      function handleReset(event) {
+        event.preventDefault(); // Prevent form from submitting traditionally
+        const email = document.getElementById('email').value;
+        
+        if (email) {
+          // You can handle further email validation or backend calls here
+          alert('Password reset link sent to: ' + email);
+          
+          // After submission, redirect to reset.html
+          window.location.href = 'reset.html';
+        } else {
+          alert('Please enter your email.');
+        }
+      }
+    </script>
+
+    <div class="signin-link">
+      Remember your password? <a href="login.html">Sign In</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+
+    <button class="google-btn">Continue with Google</button>
+    <p class="or-text">or use</p>
+
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="fname">First Name*</label>
+        <input type="text" id="fname" required />
+      </div>
+
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" />
+      </div>
+
+      <div class="form-group">
+        <label for="profile">Profile Picture*</label>
+        <input type="file" id="profile" accept="image/*" required />
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username*</label>
+        <input type="text" id="username" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail*</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password*</label>
+        <input type="password" id="password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password*</label>
+        <input type="password" id="confirm-password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country*</label>
+        <select id="country" required>
+          <option value="India" selected>India</option>
+          <!-- aur countries add kar sakte ho -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City*</label>
+        <input type="text" id="city" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" />
+      </div>
+
+      <div class="form-group">
+        <label>Gender*</label>
+        <div class="gender-group">
+          <label><input type="radio" name="gender" value="Male" required /> Male</label>
+          <label><input type="radio" name="gender" value="Female" /> Female</label>
+          <label><input type="radio" name="gender" value="Other" /> Other</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth (Age)*</label>
+        <input type="date" id="dob" required />
+      </div>
+
+      <div class="form-check">
+        <label>
+          <input type="checkbox" required />
+          By registering, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+
+    <div class="signin-link">
+      Already have an account? <a href="login.html">Sign In Now</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
