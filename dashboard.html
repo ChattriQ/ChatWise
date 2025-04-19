@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .dashboard {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 30px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    .dashboard h2 {
+      margin-bottom: 10px;
+    }
+    .dashboard p {
+      margin-bottom: 20px;
+      color: #444;
+    }
+    .logout-btn {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Welcome to Your Dashboard!</h2>
+    <p id="welcomeUser">Loading user info...</p>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    // Check if user is logged in
+    const username = localStorage.getItem("loggedInUser");
+    const welcomeEl = document.getElementById("welcomeUser");
+
+    if (username) {
+      welcomeEl.textContent = "Hello, " + username + "!";
+    } else {
+      // Redirect to login if no user found
+      alert("Please log in first.");
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
